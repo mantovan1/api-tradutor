@@ -7,7 +7,7 @@ app.get('/:idioma/:texto', async (req, res) => {
   	const idioma = req.params.idioma;
 	const texto = req.params.texto;
 
-	const browser = await puppeteer.launch({ headless: false });
+	const browser = await puppeteer.launch({ headless: true });
   	const page = await browser.newPage();
   	await page.goto('https://translate.google.com.br/?hl=' + idioma + '&text=' + texto);
 
